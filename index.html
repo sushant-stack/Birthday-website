@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+
+    <style>
+        :root {
+            --primary: #ff4d6d;
+            --secondary: #ff8fa3;
+            --dark: #1a1a1a;
+            --text: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark);
+            color: var(--text);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+        }
+
+        .btn-group {
+            margin-top: 2rem;
+            position: relative;
+            height: 60px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #yesBtn {
+            background-color: #2ec4b6;
+            color: white;
+            margin-right: 10px;
+        }
+
+        #noBtn {
+            background-color: var(--primary);
+            color: white;
+            position: absolute;
+        }
+
+        /* ===== MENU ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .menu-card {
+            background: rgba(255, 77, 109, 0.2);
+            padding: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            border: 1px solid var(--primary);
+            font-weight: bold;
+        }
+
+        /* ===== CONTENT ===== */
+        .content-area {
+            background: #ffffff;
+            color: #333;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .back-btn {
+            background: #333;
+            color: white;
+            margin-top: 15px;
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        img.gif {
+            width: 150px;
+            margin-bottom: 10px;
+        }
+
+        video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* ===== GALLERY FIX (SAFE) ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 160px;
+            object-fit: contain;   /* SAME jaisa hai waisa hi */
+            background: #00000010;
+            border-radius: 12px;
+            padding: 5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= PROPOSAL ================= -->
+<div id="proposalSection" class="container">
+    <img src="https://media.giphy.com/media/cLS1cfxvGOPVpf9g3y/giphy.gif" class="gif">
+    <h1>Will you be mine?</h1>
+    <p>Life is an incredible journey, and I want to spend every moment of it with you.</p>
+
+    <div class="btn-group">
+        <button id="yesBtn">YES</button>
+        <button id="noBtn">NO</button>
+    </div>
+</div>
+
+<!-- ================= MENU ================= -->
+<div id="mainMenu" class="container hidden">
+    <h1>Happy Birthday Bhutkun 💍</h1>
+    <p>You make my world so much brighter.</p>
+
+    <div class="card-grid">
+        <div class="menu-card" onclick="showSection('letter')">💌<br>My Letter</div>
+        <div class="menu-card" onclick="showSection('video')">🎬<br>Our Recap</div>
+        <div class="menu-card" onclick="showSection('gallery')">📸<br>some cute pic</div>
+    </div>
+</div>
+
+<!-- ================= CONTENT ================= -->
+<div id="contentSection" class="container hidden">
+
+    <!-- LETTER -->
+    <div id="letterArea" class="content-area hidden">
+        <h3 style="color:var(--primary)">My Dearest,</h3>
+        <p>
+            Happy Birthday Bhutkun 🎂❤️
+Online mile the, par dil se judna shayad likha hua tha.
+Tera mujhe pehli baar pasand karna, meri Bullet wali purple shirt ki photo—sab aaj bhi yaad hai.
+Tere liye Dhanbad aana, long distance ke beech woh ek mulakaat… sab worth it tha.
+Saiyaara ki corner seat aur woh pehla kiss—woh pal meri zindagi ka sabse special moment hai.
+Jamshedpur se Dhanbad tak ka faasla chhota hai, par mera pyaar tere liye infinite hai.
+Aaj ke din bas itna kehna hai—tu meri sabse khoobsurat kahani hai 💜
+        </p>
+        <p><i>Forever yours ❤️</i></p>
+    </div>
+
+    <!-- VIDEO -->
+    <div id="videoArea" class="content-area hidden">
+        <video controls>
+            <source src="WhatsApp Video 2026-01-29 at 11.17.16 PM.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- GALLERY (FIXED) -->
+    <div id="galleryArea" class="content-area hidden">
+        <h3 style="color:var(--primary)">Our Memories 📸</h3>
+
+        <div class="gallery-grid">
+            <img src="WhatsApp Image 2026-01-27 at 12.08.16 AM.jpeg">
+            <img src="WhatsApp Image 2026-01-26 at 12.42.10 AM.jpeg">
+            <img src="WhatsApp Image 2026-01-27 at 12.08.17 AM (1).jpeg">
+        </div>
+    </div>
+
+    <button class="back-btn" onclick="goBack()">Go Back</button>
+</div>
+
+<script>
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const proposalSection = document.getElementById('proposalSection');
+    const mainMenu = document.getElementById('mainMenu');
+    const contentSection = document.getElementById('contentSection');
+
+    noBtn.addEventListener('mouseover', () => {
+        const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+        noBtn.style.left = x + 'px';
+        noBtn.style.top = y + 'px';
+    });
+
+    yesBtn.addEventListener('click', () => {
+        proposalSection.classList.add('hidden');
+        mainMenu.classList.remove('hidden');
+    });
+
+    function showSection(type) {
+        mainMenu.classList.add('hidden');
+        contentSection.classList.remove('hidden');
+
+        document.getElementById('letterArea').classList.add('hidden');
+        document.getElementById('videoArea').classList.add('hidden');
+        document.getElementById('galleryArea').classList.add('hidden');
+
+        if (type === 'letter') document.getElementById('letterArea').classList.remove('hidden');
+        if (type === 'video') document.getElementById('videoArea').classList.remove('hidden');
+        if (type === 'gallery') document.getElementById('galleryArea').classList.remove('hidden');
+    }
+
+    function goBack() {
+        contentSection.classList.add('hidden');
+        mainMenu.classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
